@@ -109,7 +109,7 @@ export interface DocumentsExportParameters {
     include_fields?: string;
     exclude_fields?: string;
 }
-export interface SearchableDocuments<T> {
+export interface SearchableDocuments<T extends DocumentSchema> {
     search(searchParameters: SearchParams, options: SearchOptions): Promise<SearchResponse<T>>;
     clearCache(): void;
 }
