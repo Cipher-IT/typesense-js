@@ -13,7 +13,7 @@ export interface MultiSearchRequestsSchema {
   searches: MultiSearchRequestSchema[]
 }
 
-export interface MultiSearchResponse<T> {
+export interface MultiSearchResponse<T extends DocumentSchema> {
   results: SearchResponse<T>[]
 }
 

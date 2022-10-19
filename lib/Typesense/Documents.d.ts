@@ -37,6 +37,7 @@ export interface SearchParams {
     group_by?: string;
     group_limit?: number;
     include_fields?: string;
+    infix?: string;
     exclude_fields?: string;
     highlight_fields?: string;
     highlight_full_fields?: string;

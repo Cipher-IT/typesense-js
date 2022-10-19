@@ -45,6 +45,7 @@ export interface SearchParams {
   group_by?: string
   group_limit?: number // default:
   include_fields?: string
+  infix?: string
   exclude_fields?: string
   highlight_fields?: string // default: all queried fields
   highlight_full_fields?: string // default: all fields
@@ -124,7 +125,7 @@ export interface DocumentsExportParameters {
   exclude_fields?: string
 }
 
-export interface SearchableDocuments<T> {
+export interface SearchableDocuments<T extends DocumentSchema> {
   search(searchParameters: SearchParams, options: SearchOptions): Promise<SearchResponse<T>>
   clearCache(): void
 }

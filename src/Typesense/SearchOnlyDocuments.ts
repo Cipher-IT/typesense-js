@@ -2,11 +2,11 @@ import RequestWithCache from './RequestWithCache'
 import ApiCall from './ApiCall'
 import Configuration from './Configuration'
 import Collections from './Collections'
-import type { SearchableDocuments, SearchOptions, SearchParams, SearchResponse } from './Documents'
+import type { DocumentSchema, SearchableDocuments, SearchOptions, SearchParams, SearchResponse } from './Documents'
 
 const RESOURCEPATH = '/documents'
 
-export class SearchOnlyDocuments<T> implements SearchableDocuments<T> {
+export class SearchOnlyDocuments<T extends DocumentSchema> implements SearchableDocuments<T> {
   protected requestWithCache: RequestWithCache = new RequestWithCache()
 
   constructor(protected collectionName: string, protected apiCall: ApiCall, protected configuration: Configuration) {}
